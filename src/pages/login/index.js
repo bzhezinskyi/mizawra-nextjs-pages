@@ -1,3 +1,4 @@
+import useStore from "@/store/useStore";
 import { roboto_flex } from "@/styles/fonts";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,6 +9,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const [blurPassword, setBlurPassword] = useState(true);
+
+  const { login } = useStore();
 
   const handleToggleBlurPassword = () => {
     blurPassword === true ? setBlurPassword(false) : setBlurPassword(true);
@@ -37,6 +40,8 @@ export default function Login() {
 
     setEmail("");
     setPassword("");
+
+    login();
   };
 
   return (
