@@ -8,6 +8,10 @@ export default function Narrative() {
   });
   const data = narrative[dataIndex];
 
+  if (!data) {
+    return;
+  }
+
   return (
     <>
       <h2>{data.title}</h2>
