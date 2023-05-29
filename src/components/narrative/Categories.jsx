@@ -1,5 +1,5 @@
 import { FaCircle, FaDotCircle } from "react-icons/fa";
-import { narrativeCategories } from "../../../constants/narrativeCategories";
+import { narrativeCategories } from "@/constants/narrativeCategories";
 
 const { ALL, FREE_JOURNAL, PROMPTED_JOURNAL, STORY } = narrativeCategories;
 
@@ -24,8 +24,8 @@ export default function Categories({ category, setCategory }) {
   };
 
   return (
-    <ul className="w-full flex justify-between mb-44">
-      <li className="w-1/3 h-44 m-3 text-center">
+    <ul className="w-full flex flex-wrap justify-around mb-44">
+      <li className="w-96 h-44 m-3 text-center">
         <button
           className="relative w-full h-32 mt-9 p-auto rounded-3xl btn"
           name="free"
@@ -40,7 +40,7 @@ export default function Categories({ category, setCategory }) {
           <h3 className="uppercase text-2xl">Free journal</h3>
         </button>
       </li>
-      <li className="w-1/3 h-44 m-3 text-center">
+      <li className="w-96 h-44 m-3 text-center">
         <button
           className="relative w-full h-32 mt-9 p-auto rounded-3xl btn"
           name="prompted"
@@ -54,7 +54,7 @@ export default function Categories({ category, setCategory }) {
           <h3 className="uppercase text-2xl">prompted journal</h3>
         </button>
       </li>
-      <li className="w-1/3 h-44 m-3 text-center">
+      <li className="w-96 h-44 m-3 text-center">
         <button
           className="relative w-full h-32 mt-9 p-auto rounded-3xl btn"
           name="story"

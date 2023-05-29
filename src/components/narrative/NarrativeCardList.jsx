@@ -1,4 +1,4 @@
-import narrative from "../../../narrative.json";
+import narrative from "@/narrative.json";
 import NarrativeCard from "./NarrativeCard";
 
 export default function NarrativeCardList({ category }) {
@@ -14,7 +14,7 @@ export default function NarrativeCardList({ category }) {
 
         <span className="text-sm">{filterNarrative.length} Posts</span>
       </div>
-      <ul className="flex flex-wrap">
+      <ul className="flex flex-wrap justify-around">
         {filterNarrative.map((item) => (
           <NarrativeCard key={item.id} details={item} />
         ))}

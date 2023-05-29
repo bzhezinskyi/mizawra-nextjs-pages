@@ -5,7 +5,7 @@ import { FaCircle } from "react-icons/fa";
 
 export default function NarrativeCard({ details }) {
   return (
-    <li className="w-1/3 ">
+    <li className="w-96 ">
       <Link
         href={`${details.id}`}
         className={`block m-3 p-9 rounded-3xl card ${details.category}`}
