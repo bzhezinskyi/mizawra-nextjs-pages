@@ -1,9 +1,12 @@
-import { roboto_flex } from "@/styles/fonts";
 import Link from "next/link";
 import { HiOutlineTrash } from "react-icons/hi2";
 import { FaCircle } from "react-icons/fa";
 
+import { roboto_flex } from "@/styles/fonts";
+import useModal from "@/store/useModal";
+
 export default function NarrativeCard({ details }) {
+  const { openModal, addData } = useModal();
   return (
     <li className="w-96 ">
       <Link
@@ -21,7 +24,17 @@ export default function NarrativeCard({ details }) {
         </p>
         <div className="flex justify-between">
           <span className="text-xl font-medium">{details.date}</span>
-          <HiOutlineTrash className="w-6 h-6" />
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addData(details);
+              openModal();
+            }}
+          >
+            <HiOutlineTrash className="w-6 h-6" />
+          </button>
         </div>
       </Link>
     </li>

@@ -1,21 +1,33 @@
 import { FaCircle, FaDotCircle } from "react-icons/fa";
 import { narrativeCategories } from "@/constants/narrativeCategories";
+import { useRouter } from "next/router";
 
 const { ALL, FREE_JOURNAL, PROMPTED_JOURNAL, STORY } = narrativeCategories;
 
-export default function Categories({ category, setCategory }) {
+export default function Categories() {
+  const router = useRouter();
+  const category = router.query.category;
+
   const handleToggleCategory = (evt) => {
     switch (evt.currentTarget.name) {
-      case "free":
-        setCategory(category === FREE_JOURNAL ? ALL : FREE_JOURNAL);
+      case FREE_JOURNAL:
+        category === FREE_JOURNAL
+          ? router.push(``)
+          : router.push(`?category=${FREE_JOURNAL}`);
         break;
 
-      case "prompted":
-        setCategory(category === PROMPTED_JOURNAL ? ALL : PROMPTED_JOURNAL);
+      case PROMPTED_JOURNAL:
+        category === PROMPTED_JOURNAL
+          ? router.push(``)
+          : router.push(`?category=${PROMPTED_JOURNAL}`);
+
         break;
 
-      case "story":
-        setCategory(category === STORY ? ALL : STORY);
+      case STORY:
+        category === STORY
+          ? router.push(``)
+          : router.push(`?category=${STORY}`);
+
         break;
 
       default:
@@ -28,7 +40,7 @@ export default function Categories({ category, setCategory }) {
       <li className="w-96 h-44 m-3 text-center">
         <button
           className="relative w-full h-32 mt-9 p-auto rounded-3xl btn"
-          name="free"
+          name={FREE_JOURNAL}
           onClick={handleToggleCategory}
         >
           {category === FREE_JOURNAL ? (
@@ -43,7 +55,7 @@ export default function Categories({ category, setCategory }) {
       <li className="w-96 h-44 m-3 text-center">
         <button
           className="relative w-full h-32 mt-9 p-auto rounded-3xl btn"
-          name="prompted"
+          name={PROMPTED_JOURNAL}
           onClick={handleToggleCategory}
         >
           {category === PROMPTED_JOURNAL ? (
@@ -57,7 +69,7 @@ export default function Categories({ category, setCategory }) {
       <li className="w-96 h-44 m-3 text-center">
         <button
           className="relative w-full h-32 mt-9 p-auto rounded-3xl btn"
-          name="story"
+          name={STORY}
           onClick={handleToggleCategory}
         >
           {category === STORY ? (

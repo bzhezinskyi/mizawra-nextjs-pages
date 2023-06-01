@@ -1,11 +1,15 @@
 import narrative from "@/narrative.json";
 import NarrativeCard from "./NarrativeCard";
+import Modal from "../Modal";
+import { useRouter } from "next/router";
 
-export default function NarrativeCardList({ category }) {
-  const filterNarrative =
-    category === "all"
-      ? narrative
-      : narrative.filter((item) => item.category === category);
+export default function NarrativeCardList() {
+  const router = useRouter();
+  const category = router.query.category;
+
+  const filterNarrative = category
+    ? narrative.filter((item) => item.category === category)
+    : narrative;
 
   return (
     <>
@@ -20,6 +24,7 @@ export default function NarrativeCardList({ category }) {
         ))}
       </ul>
       <div className={`bggradient ${category}`}></div>
+      <Modal />
     </>
   );
 }
