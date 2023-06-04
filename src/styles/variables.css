@@ -32,6 +32,12 @@
   --border-card: 0.5px solid rgba(102, 102, 102, 0.1);
 
   --shadow-btn: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  --shadow-card-green: 10px 10px 20px rgba(205, 232, 43, 0.5),
+    10px 10px 20px rgba(0, 0, 0, 0.1);
+  --shadow-card-pink: 10px 10px 20px rgba(253, 202, 185, 0.95),
+    10px 10px 20px rgba(0, 0, 0, 0.1);
+  --shadow-card-blue: 10px 10px 20px rgba(48, 96, 255, 0.4),
+    10px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {

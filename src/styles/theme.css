@@ -51,6 +51,15 @@ html {
 .card:focus.story {
   fill: var(--bg-color-pink);
 }
+.card.green {
+  box-shadow: var(--shadow-card-green);
+}
+.card.pink {
+  box-shadow: var(--shadow-card-pink);
+}
+.card.blue {
+  box-shadow: var(--shadow-card-blue);
+}
 
 .bggradient {
   position: fixed;
@@ -68,4 +77,30 @@ html {
 }
 .bggradient.story {
   background-image: var(--bg-gradient-pink);
+}
+
+.writing-form {
+  background-color: var(--bg-color-primary);
+  border: var(--border-btn);
+  box-shadow: var(--shadow-btn);
+
+  height: 70vh;
+}
+.writing-form__text {
+  height: 80%;
+}
+.writing-circel {
+  display: none;
+}
+.writing-circel.free {
+  display: block;
+  fill: var(--bg-color-blue);
+}
+.writing-circel.prompted {
+  display: block;
+  fill: var(--bg-color-grean);
+}
+.writing-circel.story {
+  display: block;
+  fill: var(--bg-color-pink);
 }

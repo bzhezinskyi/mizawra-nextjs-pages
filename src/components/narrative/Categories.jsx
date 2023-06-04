@@ -1,15 +1,16 @@
 import { FaCircle, FaDotCircle } from "react-icons/fa";
-import { narrativeCategories } from "@/constants/narrativeCategories";
 import { useRouter } from "next/router";
 
-const { ALL, FREE_JOURNAL, PROMPTED_JOURNAL, STORY } = narrativeCategories;
+import { narrativeCategories } from "@/constants/narrativeCategories";
 
 export default function Categories() {
   const router = useRouter();
-  const category = router.query.category;
 
-  const handleToggleCategory = (evt) => {
-    switch (evt.currentTarget.name) {
+  const { category } = router.query;
+  const { FREE_JOURNAL, PROMPTED_JOURNAL, STORY } = narrativeCategories;
+
+  const handleToggleCategory = (e) => {
+    switch (e.currentTarget.name) {
       case FREE_JOURNAL:
         category === FREE_JOURNAL
           ? router.push(``)

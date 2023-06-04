@@ -5,10 +5,8 @@ import { roboto_mono } from "../styles/fonts";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head>
-        <title>MiZaWra</title>
-      </Head>
-      <body className={`container mx-auto ${roboto_mono.className}`}>
+      <Head />
+      <body className={`container mx-auto ${roboto_mono.className} h-screen`}>
         <Main />
         <NextScript />
       </body>

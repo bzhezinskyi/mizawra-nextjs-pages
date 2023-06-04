@@ -16,8 +16,8 @@ export default function Login() {
     blurPassword === true ? setBlurPassword(false) : setBlurPassword(true);
   };
 
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
     switch (name) {
       case "email":
@@ -31,8 +31,8 @@ export default function Login() {
     }
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     const user = { email, password };
 

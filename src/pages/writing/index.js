@@ -1,11 +1,11 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
+
+import Categories from "@/components/narrative/Categories";
+import WritingPage from "@/components/writing/WritingPage";
 
 export default function Writing() {
-  return (
-    <div className="flex justify-around">
-      <Link href="writing/free-journal">FREE JOURNAL</Link>
-      <Link href="writing/prompted-journal">PROMPTED JOURNAL</Link>
-      <Link href="writing/story">STORY</Link>
-    </div>
-  );
+  const router = useRouter();
+  const category = router.query.category;
+
+  return <>{category ? <WritingPage /> : <Categories />}</>;
 }
